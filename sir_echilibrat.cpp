@@ -12,10 +12,11 @@ int main() {
     for (int i = 1; i <= n; i++)
         cin >> v[i];
 
-    bool este_sir_echilibrat = true;    // Folosim un 'flag' pentru a determina raspunsul
-    int k = v[1] + v[n];                // Luam drept constanta prima pereche (sugerata de problema)
-    for (int i = 2; i <= n / 2; i++)    // Daca n este impar, elementul din mijloc este irelevant
-        if (v[i] + v[n - i + 1] != k)   // Conteaza numai elementele simetrice (pereche)
+    bool este_sir_echilibrat = true;            // Folosim un 'flag' pentru a determina raspunsul
+    int k = (int)ceil(1.0 * n / 2); 
+    int constanta = v[1] + v[n];                // Luam drept constanta prima pereche (sugerata de problema)
+    for (int i = 2; i <= k; i++)                // Daca n este impar, elementul din mijloc este adunat de 2 ori
+        if (v[i] + v[n - i + 1] != constanta)   // Verificam elementele simetrice (pereche)
             este_sir_echilibrat = false;
 
     if (!este_sir_echilibrat)

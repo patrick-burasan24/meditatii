@@ -11,11 +11,11 @@ int main() {
     cin >> x_pajiste >> y_pajiste;
     cin >> d;
 
-    // (x_pajiste - x_grajd)^2 + (y_pajiste - y_grajd)^2 <= d
+    // (x_pajiste - x_grajd)^2 + (y_pajiste - y_grajd)^2 <= d * d
     double x = (x_pajiste - x_grajd) * (x_pajiste - x_grajd);
     double y = (y_pajiste - y_grajd) * (y_pajiste - y_grajd);
 
-    if (x + y <= d)
+    if (x + y <= d * d)
         cout << "GOOD";
     else
         cout << "BAD";
